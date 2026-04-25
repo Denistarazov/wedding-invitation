@@ -25,7 +25,7 @@ body {
   margin: 0;
   color: var(--ink);
   background:
-    linear-gradient(90deg, #d4cdc8 0%, #eae6e2 14%, #fefcfa 28%, #fefcfa 72%, #eae6e2 86%, #d4cdc8 100%);
+    linear-gradient(90deg, #d0cac4 0%, #eae6e2 16%, #ffffff 30%, #ffffff 70%, #eae6e2 84%, #d0cac4 100%);
   font-family: var(--serif);
   line-height: 1.35;
 }
@@ -259,21 +259,10 @@ textarea {
 .wish-content {
   position: absolute;
   z-index: 1;
-  inset: 10% 12% 10%;
+  inset: 12% 14% 12%;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-}
-
-.wish-number {
-  color: var(--red);
-  font-family: var(--script);
-  font-size: clamp(36px, 9.5vw, 48px);
-  font-weight: 700;
-  line-height: 1;
-  text-align: center;
 }
 
 .wish p {
@@ -282,7 +271,7 @@ textarea {
   font-style: italic;
   font-size: clamp(14px, 3.6vw, 16px);
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.55;
   text-align: center;
 }
 
