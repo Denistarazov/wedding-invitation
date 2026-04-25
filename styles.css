@@ -25,7 +25,7 @@ body {
   margin: 0;
   color: var(--ink);
   background:
-    linear-gradient(90deg, #c8bfb8 0%, #e0dbd6 12%, #fdfbf8 26%, #fdfbf8 74%, #e0dbd6 88%, #c8bfb8 100%);
+    linear-gradient(90deg, #d4cdc8 0%, #eae6e2 14%, #fefcfa 28%, #fefcfa 72%, #eae6e2 86%, #d4cdc8 100%);
   font-family: var(--serif);
   line-height: 1.35;
 }
@@ -256,28 +256,31 @@ textarea {
   object-fit: fill;
 }
 
-.wish-number {
+.wish-content {
   position: absolute;
   z-index: 1;
-  top: 12%;
-  left: 10%;
+  inset: 10% 12% 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.wish-number {
   color: var(--red);
   font-family: var(--script);
-  font-size: clamp(32px, 8.5vw, 44px);
+  font-size: clamp(36px, 9.5vw, 48px);
   font-weight: 700;
   line-height: 1;
+  text-align: center;
 }
 
 .wish p {
-  position: absolute;
-  z-index: 1;
-  inset: 36% 12% 10% 12%;
-  display: grid;
-  place-items: center;
   margin: 0;
   font-family: var(--serif);
   font-style: italic;
-  font-size: clamp(13px, 3.3vw, 15px);
+  font-size: clamp(14px, 3.6vw, 16px);
   font-weight: 400;
   line-height: 1.5;
   text-align: center;
@@ -290,29 +293,10 @@ textarea {
   margin-right: 0;
 }
 
-.wish-two .wish-number {
-  left: auto;
-  top: 9%;
-  right: 10%;
-}
-
-.wish-two p {
-  inset: 34% 12% 10% 12%;
-}
-
 .wish-three {
   width: min(96%, 350px);
   aspect-ratio: 1308 / 656;
   margin-left: 0;
-}
-
-.wish-three .wish-number {
-  top: 20%;
-  left: 12%;
-}
-
-.wish-three p {
-  inset: 40% 12% 10% 12%;
 }
 
 .wish-four {
@@ -321,14 +305,7 @@ textarea {
   margin-right: 0;
 }
 
-.wish-four .wish-number {
-  top: 16%;
-  left: 12%;
-}
 
-.wish-four p {
-  inset: 36% 12% 10% 12%;
-}
 
 .cheers-section {
   padding-top: 34px;
