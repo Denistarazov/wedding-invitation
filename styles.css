@@ -83,18 +83,6 @@ textarea {
   opacity: 0.95;
 }
 
-.photo {
-  filter: drop-shadow(0 10px 15px rgba(36, 31, 27, 0.15));
-}
-
-.photo-close {
-  position: relative;
-  z-index: 1;
-  width: min(62vw, 236px);
-  margin: 88px auto 0;
-  transform: rotate(4deg);
-}
-
 .dreams {
   margin: 285px 0 0;
   text-align: right;
@@ -187,10 +175,6 @@ textarea {
   font-weight: 700;
 }
 
-.event-text span {
-  word-break: break-word;
-}
-
 .map-link {
   color: var(--red);
   text-decoration: underline;
@@ -215,17 +199,6 @@ textarea {
   margin: 32px 0 -20px -86px;
 }
 
-.photo-story {
-  padding-top: 14px;
-  padding-bottom: 28px;
-}
-
-.photo-dance {
-  width: min(72vw, 288px);
-  margin: 0 auto;
-  transform: rotate(-1deg);
-}
-
 /* Фото цветов */
 .flowers-section {
   padding-top: 0;
@@ -242,20 +215,25 @@ textarea {
   object-position: center 30%;
 }
 
-/* Видео-клипы */
-.video-clip {
+.photo-story {
+  padding-top: 14px;
+  padding-bottom: 28px;
+}
+
+/* Фото в стиле поляроид */
+.photo-clip {
   display: block;
   border-radius: 2px;
   box-shadow: 0 10px 30px rgba(36, 31, 27, 0.18);
 }
 
-.video-clip-1 {
+.photo-clip-1 {
   width: min(76vw, 300px);
   margin: 0 auto;
   transform: rotate(-1.5deg);
 }
 
-.video-clip-2 {
+.photo-clip-2 {
   width: min(68vw, 260px);
   margin: 0 auto 36px;
   transform: rotate(2deg);
@@ -279,7 +257,7 @@ textarea {
 .wish {
   position: relative;
   width: min(100%, 348px);
-  aspect-ratio: 1311 / 607; /* natural size of wish-shape-1 */
+  aspect-ratio: 1311 / 607;
   margin: 28px auto 0;
 }
 
@@ -310,13 +288,6 @@ textarea {
   text-align: center;
 }
 
-.wish-two {
-  width: min(92%, 326px);
-  aspect-ratio: 1104 / 512;
-  margin-left: auto;
-  margin-right: 0;
-}
-
 .wish-three {
   width: min(96%, 350px);
   aspect-ratio: 1308 / 656;
@@ -328,8 +299,6 @@ textarea {
   aspect-ratio: 1385 / 741;
   margin-right: 0;
 }
-
-
 
 .cheers-section {
   padding-top: 34px;
@@ -343,28 +312,6 @@ textarea {
   width: 660px;
   max-width: none;
   transform: translateX(-50%) rotate(-1deg);
-}
-
-.photo-cheers {
-  position: relative;
-  z-index: 1;
-  width: min(62vw, 220px);
-  margin: 108px auto 0;
-  transform: rotate(7deg);
-}
-
-.confirm-copy {
-  max-width: 300px;
-  margin: clamp(380px, 85vw, 430px) auto 0;
-  font-family: var(--mono);
-  font-size: clamp(12px, 3vw, 15px);
-  font-weight: 400;
-  line-height: 1.45;
-  text-align: center;
-}
-
-.confirm-copy span {
-  font-weight: 500;
 }
 
 .rsvp-section {
@@ -510,12 +457,6 @@ textarea {
   padding-bottom: 64px;
 }
 
-.photo-embrace {
-  width: min(62vw, 244px);
-  margin: 0 auto;
-  transform: rotate(-2deg);
-}
-
 .with-love {
   position: relative;
   width: max-content;
@@ -565,7 +506,6 @@ textarea {
     margin-right: -34px;
   }
 
-
   .paper-form {
     min-height: 790px;
   }
@@ -610,6 +550,7 @@ textarea {
   transform: translateY(28px);
   transition: opacity 0.65s ease, transform 0.65s ease;
 }
+
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);

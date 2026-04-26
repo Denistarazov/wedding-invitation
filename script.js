@@ -1,9 +1,9 @@
 // Countdown to June 26, 2026, 15:00 Perm time (UTC+5)
 (function initCountdown() {
   const TARGET = new Date("2026-06-26T15:00:00+05:00").getTime();
-  const elDays = document.getElementById("cd-days");
+  const elDays  = document.getElementById("cd-days");
   const elHours = document.getElementById("cd-hours");
-  const elMins = document.getElementById("cd-mins");
+  const elMins  = document.getElementById("cd-mins");
   if (!elDays) return;
 
   function pad(n) { return String(n).padStart(2, "0"); }
@@ -11,17 +11,14 @@
   function tick() {
     const diff = TARGET - Date.now();
     if (diff <= 0) {
-      elDays.textContent = "00";
+      elDays.textContent  = "00";
       elHours.textContent = "00";
-      elMins.textContent = "00";
+      elMins.textContent  = "00";
       return;
     }
-    const days  = Math.floor(diff / 86400000);
-    const hours = Math.floor((diff % 86400000) / 3600000);
-    const mins  = Math.floor((diff % 3600000) / 60000);
-    elDays.textContent  = days;
-    elHours.textContent = pad(hours);
-    elMins.textContent  = pad(mins);
+    elDays.textContent  = Math.floor(diff / 86400000);
+    elHours.textContent = pad(Math.floor((diff % 86400000) / 3600000));
+    elMins.textContent  = pad(Math.floor((diff % 3600000) / 60000));
   }
 
   tick();
@@ -45,13 +42,21 @@
   });
 })();
 
-// Parallax on script strips
+// Parallax on script strips — via requestAnimationFrame для плавности
 (function initParallax() {
-  const loveScript = document.querySelector(".script-strip-love");
+  const loveScript   = document.querySelector(".script-strip-love");
   const cheersScript = document.querySelector(".script-strip-cheers");
   const cheersSection = document.querySelector(".cheers-section");
 
-  function onScroll() {
+  // Кэшируем offsetTop один раз, обновляем при resize
+  let cheersTop = cheersSection ? cheersSection.offsetTop : 0;
+  window.addEventListener("resize", () => {
+    cheersTop = cheersSection ? cheersSection.offsetTop : 0;
+  }, { passive: true });
+
+  let ticking = false;
+
+  function applyParallax() {
     const sy = window.scrollY;
 
     if (loveScript) {
@@ -59,36 +64,45 @@
         `translateX(-50%) rotate(-1deg) translateY(${sy * 0.12}px)`;
     }
 
-    if (cheersScript && cheersSection) {
-      const rel = sy - cheersSection.offsetTop;
+    if (cheersScript) {
       cheersScript.style.transform =
-        `translateX(-50%) rotate(-1deg) translateY(${rel * 0.12}px)`;
+        `translateX(-50%) rotate(-1deg) translateY(${(sy - cheersTop) * 0.12}px)`;
     }
+
+    ticking = false;
   }
 
-  window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
+  window.addEventListener("scroll", () => {
+    if (!ticking) {
+      requestAnimationFrame(applyParallax);
+      ticking = true;
+    }
+  }, { passive: true });
+
+  applyParallax();
 })();
 
 // RSVP form
-const form = document.querySelector("#rsvp-form");
-const statusNode = document.querySelector("#form-status");
+(function initForm() {
+  const form       = document.querySelector("#rsvp-form");
+  const statusNode = document.querySelector("#form-status");
+  const button     = form ? form.querySelector("button[type='submit']") : null;
 
-function setStatus(message, type = "") {
-  statusNode.textContent = message;
-  statusNode.className = `form-status${type ? ` is-${type}` : ""}`;
-}
+  if (!form) return;
 
-if (form) {
+  function setStatus(message, type = "") {
+    statusNode.textContent = message;
+    statusNode.className = `form-status${type ? ` is-${type}` : ""}`;
+  }
+
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     const endpoint = form.action;
-    const button = form.querySelector("button[type='submit']");
 
     if (endpoint.includes("REPLACE_WITH_EMAIL")) {
       setStatus(
-        "Чтобы ответы приходили на почту, замените REPLACE_WITH_EMAIL@example.com в index.html на нужный email.",
+        "Замените REPLACE_WITH_EMAIL@example.com в index.html на нужный email.",
         "error"
       );
       return;
@@ -97,28 +111,30 @@ if (form) {
     button.disabled = true;
     setStatus("Отправляем ответ...");
 
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 10000);
+
     try {
       const response = await fetch(endpoint, {
         method: "POST",
         body: new FormData(form),
-        headers: {
-          Accept: "application/json",
-        },
+        headers: { Accept: "application/json" },
+        signal: controller.signal,
       });
 
-      if (!response.ok) {
-        throw new Error("Form submit failed");
-      }
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
       form.reset();
       setStatus("Спасибо! Ответ отправлен, будем очень ждать.", "success");
-    } catch (error) {
-      setStatus(
-        "Не получилось отправить форму. Проверьте почту в настройке FormSubmit или попробуйте позже.",
-        "error"
-      );
+    } catch (err) {
+      if (err.name === "AbortError") {
+        setStatus("Превышено время ожидания. Попробуйте ещё раз.", "error");
+      } else {
+        setStatus("Не получилось отправить форму. Попробуйте позже.", "error");
+      }
     } finally {
+      clearTimeout(timeout);
       button.disabled = false;
     }
   });
-}
+})();
