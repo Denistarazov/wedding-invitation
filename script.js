@@ -28,6 +28,49 @@
   setInterval(tick, 30000);
 })();
 
+// Scroll reveal
+(function initReveal() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.classList.add("visible");
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll(".reveal").forEach((el, i) => {
+    el.style.transitionDelay = `${(i % 4) * 80}ms`;
+    observer.observe(el);
+  });
+})();
+
+// Parallax on script strips
+(function initParallax() {
+  const loveScript = document.querySelector(".script-strip-love");
+  const cheersScript = document.querySelector(".script-strip-cheers");
+  const cheersSection = document.querySelector(".cheers-section");
+
+  function onScroll() {
+    const sy = window.scrollY;
+
+    if (loveScript) {
+      loveScript.style.transform =
+        `translateX(-50%) rotate(-1deg) translateY(${sy * 0.12}px)`;
+    }
+
+    if (cheersScript && cheersSection) {
+      const rel = sy - cheersSection.offsetTop;
+      cheersScript.style.transform =
+        `translateX(-50%) rotate(-1deg) translateY(${rel * 0.12}px)`;
+    }
+  }
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+})();
+
+// RSVP form
 const form = document.querySelector("#rsvp-form");
 const statusNode = document.querySelector("#form-status");
 
