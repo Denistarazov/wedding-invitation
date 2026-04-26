@@ -7,7 +7,7 @@
   --red-soft: #bd2026;
   --line: rgba(167, 15, 22, 0.6);
   --shadow: 0 22px 70px rgba(21, 18, 16, 0.35);
-  --mono: "Anonymous Pro", "Courier New", monospace;
+  --mono: ui-monospace, "Courier New", monospace;
   --serif: "Cormorant Garamond", Georgia, serif;
   --display: "Oranienbaum", "Cormorant Garamond", Georgia, serif;
   --script: "Caveat", cursive;
