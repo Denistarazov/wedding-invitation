@@ -322,7 +322,7 @@ textarea {
 
 .paper-form {
   position: relative;
-  min-height: 820px;
+  min-height: 700px;
   background: url("assets/reply-paper.webp") center / 100% 100% no-repeat;
 }
 
@@ -508,7 +508,7 @@ textarea {
   }
 
   .paper-form {
-    min-height: 790px;
+    min-height: 670px;
   }
 
   .rsvp-form {
@@ -537,7 +537,7 @@ textarea {
   }
 
   .paper-form {
-    min-height: 840px;
+    min-height: 720px;
   }
 
   .rsvp-form {
