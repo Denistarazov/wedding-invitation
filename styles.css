@@ -329,10 +329,11 @@ textarea {
 
 .rsvp-form {
   position: absolute;
-  inset: 100px 48px 50px 58px;
+  inset: 60px 50px 50px 50px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  justify-content: center;
+  gap: 10px;
 }
 
 .form-kicker {
@@ -346,8 +347,9 @@ textarea {
 }
 
 .form-title {
-  margin-bottom: 10px;
-  font-size: clamp(42px, 11vw, 54px);
+  margin: 0 0 6px;
+  text-align: center;
+  font-size: clamp(38px, 10vw, 48px);
 }
 
 .field {
@@ -519,7 +521,7 @@ textarea {
   }
 
   .rsvp-form {
-    inset: 90px 34px 40px 44px;
+    inset: 50px 36px 40px 36px;
   }
 }
 
@@ -548,7 +550,7 @@ textarea {
   }
 
   .rsvp-form {
-    inset: 105px 56px 50px 66px;
+    inset: 70px 60px 50px 60px;
   }
 }
 
