@@ -25,7 +25,7 @@
       href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Oranienbaum&display=swap"
       rel="stylesheet"
     >
-    <link rel="stylesheet" href="styles.css?v=11">
+    <link rel="stylesheet" href="styles.css?v=12">
   </head>
   <body>
     <main class="invitation" aria-label="Свадебное приглашение">
@@ -157,7 +157,6 @@
             <input type="hidden" name="_template" value="table">
             <input type="hidden" name="_captcha" value="false">
 
-            <p class="form-kicker">Ответ на приглашение</p>
             <h2 class="script-heading form-title" id="rsvp-title">Ваш ответ</h2>
 
             <label class="field">
@@ -173,14 +172,16 @@
 
             <fieldset class="field choice-field">
               <legend>Вы будете с нами или нет</legend>
-              <label>
-                <input type="radio" name="Ответ" value="Буду с радостью" checked>
-                <span>Буду с радостью</span>
-              </label>
-              <label>
-                <input type="radio" name="Ответ" value="К сожалению, не смогу">
-                <span>Не смогу</span>
-              </label>
+              <div class="choice-row">
+                <label>
+                  <input type="radio" name="Ответ" value="Приду" checked>
+                  <span>Приду</span>
+                </label>
+                <label>
+                  <input type="radio" name="Ответ" value="К сожалению, не смогу">
+                  <span>Не смогу</span>
+                </label>
+              </div>
             </fieldset>
 
             <label class="field">

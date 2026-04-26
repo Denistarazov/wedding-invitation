@@ -391,11 +391,17 @@ textarea {
   padding: 0;
 }
 
-.choice-field label {
+.choice-row {
   display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 4px;
+}
+
+.choice-field label {
+  display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin-top: 7px;
   min-height: 44px; /* accessible touch target */
   cursor: pointer;
 }
