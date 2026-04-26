@@ -112,7 +112,7 @@
     setStatus("Отправляем ответ...");
 
     const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 10000);
+    const timeout = setTimeout(() => controller.abort(), 25000);
 
     try {
       const response = await fetch(endpoint, {
