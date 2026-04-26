@@ -226,6 +226,25 @@ textarea {
   transform: rotate(-1deg);
 }
 
+/* Видео-клипы */
+.video-clip {
+  display: block;
+  border-radius: 2px;
+  box-shadow: 0 10px 30px rgba(36, 31, 27, 0.18);
+}
+
+.video-clip-1 {
+  width: min(76vw, 300px);
+  margin: 0 auto;
+  transform: rotate(-1.5deg);
+}
+
+.video-clip-2 {
+  width: min(68vw, 260px);
+  margin: 0 auto 36px;
+  transform: rotate(2deg);
+}
+
 .wishes {
   padding-top: 42px;
   padding-bottom: 40px;
