@@ -10,7 +10,7 @@
   --mono: ui-monospace, "Courier New", monospace;
   --serif: "Cormorant Garamond", Georgia, serif;
   --display: "Oranienbaum", "Cormorant Garamond", Georgia, serif;
-  --script: "Marck Script", "Caveat", cursive;
+  --script: "Caveat", cursive;
 }
 
 * {
@@ -116,7 +116,8 @@ textarea {
   margin: 26px 0 0;
   color: var(--ink);
   font-family: var(--script);
-  font-size: clamp(36px, 9.5vw, 50px);
+  font-size: clamp(26px, 7vw, 36px);
+  white-space: nowrap;
   font-weight: 600;
   line-height: 1;
 }
@@ -248,7 +249,7 @@ textarea {
   margin: 0;
   color: var(--red);
   font-family: var(--script);
-  font-size: clamp(48px, 13vw, 64px);
+  font-size: clamp(42px, 12vw, 58px);
   font-weight: 600;
   line-height: 1;
   text-align: center;
@@ -282,7 +283,7 @@ textarea {
   margin: 0;
   font-family: var(--script);
   font-style: normal;
-  font-size: clamp(16px, 4vw, 19px);
+  font-size: clamp(14px, 3.5vw, 17px);
   font-weight: 500;
   line-height: 1.45;
   text-align: center;
@@ -475,7 +476,7 @@ textarea {
   bottom: -25px;
   color: var(--red);
   font-family: var(--script);
-  font-size: 52px;
+  font-size: 46px;
   font-weight: 600;
   text-transform: none;
 }
