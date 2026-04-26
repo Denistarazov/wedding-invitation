@@ -269,7 +269,7 @@ textarea {
   margin: 0;
   font-family: var(--script);
   font-style: normal;
-  font-size: clamp(16px, 4.2vw, 20px);
+  font-size: clamp(14px, 3.5vw, 17px);
   font-weight: 500;
   line-height: 1.45;
   text-align: center;
