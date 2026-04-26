@@ -96,7 +96,7 @@ textarea {
 }
 
 .dreams {
-  margin: clamp(280px, 68vw, 340px) 0 0;
+  margin: 285px 0 0;
   text-align: right;
   font-family: var(--display);
   font-size: clamp(24px, 6.5vw, 34px);
