@@ -302,7 +302,7 @@ textarea {
 }
 
 .wish-four p {
-  font-size: clamp(14px, 3.8vw, 17px);
+  font-size: clamp(16px, 3.8vw, 17px);
 }
 
 .cheers-section {
