@@ -557,6 +557,35 @@ textarea {
   transform: translateY(0);
 }
 
+.contact {
+  margin: 22px auto 0;
+  max-width: 320px;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 12px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.contact-link {
+  color: var(--red);
+  text-decoration: underline;
+  text-decoration-color: rgba(167, 15, 22, 0.4);
+  text-underline-offset: 2px;
+  transition: text-decoration-color 160ms;
+  white-space: nowrap;
+}
+
+.contact-link:hover {
+  text-decoration-color: var(--red);
+}
+
+.contact-sep {
+  margin: 0 6px;
+  color: var(--muted);
+  opacity: 0.6;
+}
+
 /* iPhone notch / Dynamic Island / home bar safe area */
 @supports (padding-bottom: env(safe-area-inset-bottom)) {
   .finale {
