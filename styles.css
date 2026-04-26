@@ -80,8 +80,6 @@ textarea {
   width: 620px;
   max-width: none;
   transform: translateX(-50%) rotate(-1deg);
-  opacity: 0.35;
-  mix-blend-mode: multiply;
 }
 
 .dreams {
