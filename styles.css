@@ -392,6 +392,13 @@ textarea {
   padding: 0;
 }
 
+.qmark {
+  color: var(--red);
+  font-weight: 800;
+  font-size: 1.15em;
+  margin-left: 1px;
+}
+
 .choice-row {
   display: flex;
   flex-wrap: wrap;
