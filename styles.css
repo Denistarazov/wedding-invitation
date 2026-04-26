@@ -562,3 +562,57 @@ textarea {
     padding-bottom: max(64px, calc(40px + env(safe-area-inset-bottom)));
   }
 }
+
+/* ── Декоративные разделители между секциями ── */
+.section-divider::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 24px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='24' viewBox='0 0 300 24'%3E%3Cpath d='M0,12 Q37.5,4 75,12 Q112.5,20 150,12 Q187.5,4 225,12 Q262.5,20 300,12' stroke='%23a70f16' stroke-width='1' fill='none' opacity='0.5'/%3E%3Cpath d='M147,7 C147,7 142,2 138,5 C134,8 139,13 147,18 C155,13 160,8 156,5 C152,2 147,7 147,7Z' fill='%23a70f16' opacity='0.6'/%3E%3C/svg%3E") center / auto 100% repeat-x;
+  margin-top: 8px;
+}
+
+/* ── Hover-эффекты ── */
+
+/* Карточки пожеланий */
+.wish {
+  transition: transform 0.3s ease, filter 0.3s ease;
+  will-change: transform;
+}
+.wish:hover {
+  transform: translateY(-6px) rotate(0.5deg);
+  filter: drop-shadow(0 16px 20px rgba(167, 15, 22, 0.15));
+}
+
+/* Поляроид-фото */
+.photo-clip {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  will-change: transform;
+}
+.photo-clip-1:hover {
+  transform: rotate(-0.5deg) scale(1.02);
+  box-shadow: 0 18px 40px rgba(36, 31, 27, 0.25);
+}
+.photo-clip-2:hover {
+  transform: rotate(1deg) scale(1.02);
+  box-shadow: 0 18px 40px rgba(36, 31, 27, 0.25);
+}
+
+/* Фото цветов */
+.photo-flowers {
+  transition: transform 0.6s ease;
+}
+.photo-flowers:hover {
+  transform: scale(1.03);
+}
+
+/* Конверт */
+.envelope {
+  transition: transform 0.4s ease, filter 0.4s ease;
+  will-change: transform;
+}
+.envelope:hover {
+  transform: rotate(-2deg) translateY(-6px);
+  filter: drop-shadow(0 24px 24px rgba(93, 18, 14, 0.25));
+}
