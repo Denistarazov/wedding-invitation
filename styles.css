@@ -276,6 +276,7 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .wish p {
@@ -298,6 +299,10 @@ textarea {
   width: min(94%, 330px);
   aspect-ratio: 1385 / 741;
   margin-right: 0;
+}
+
+.wish-four p {
+  font-size: clamp(14px, 3.8vw, 17px);
 }
 
 .cheers-section {
