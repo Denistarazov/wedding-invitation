@@ -322,13 +322,13 @@ textarea {
 
 .paper-form {
   position: relative;
-  min-height: 700px;
-  background: url("assets/reply-paper.webp") center / 100% 100% no-repeat;
+  min-height: 500px;
+  background: url("assets/reply-paper_1_5x_smaller_height_30_less.webp") center / 100% 100% no-repeat;
 }
 
 .rsvp-form {
   position: absolute;
-  inset: 142px 48px 70px 58px;
+  inset: 100px 48px 50px 58px;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -508,11 +508,11 @@ textarea {
   }
 
   .paper-form {
-    min-height: 670px;
+    min-height: 480px;
   }
 
   .rsvp-form {
-    inset: 130px 34px 58px 44px;
+    inset: 90px 34px 40px 44px;
   }
 }
 
@@ -537,11 +537,11 @@ textarea {
   }
 
   .paper-form {
-    min-height: 720px;
+    min-height: 520px;
   }
 
   .rsvp-form {
-    inset: 150px 56px 72px 66px;
+    inset: 105px 56px 50px 66px;
   }
 }
 
