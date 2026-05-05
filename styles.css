@@ -353,6 +353,7 @@ textarea {
   margin: 0 0 6px;
   text-align: center;
   font-size: clamp(38px, 10vw, 48px);
+  scroll-margin-top: 24px;
 }
 
 .field {

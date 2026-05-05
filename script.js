@@ -27,6 +27,7 @@
 
 // Scroll reveal
 (function initReveal() {
+  const revealItems = document.querySelectorAll(".reveal");
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((e) => {
       if (e.isIntersecting) {
@@ -36,9 +37,14 @@
     });
   }, { threshold: 0.12 });
 
-  document.querySelectorAll(".reveal").forEach((el, i) => {
+  revealItems.forEach((el, i) => {
     el.style.transitionDelay = `${(i % 4) * 80}ms`;
-    observer.observe(el);
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      el.classList.add("visible");
+    } else {
+      observer.observe(el);
+    }
   });
 })();
 
